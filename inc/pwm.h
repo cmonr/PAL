@@ -1,3 +1,10 @@
+#ifndef _PWM_H_
+#define _PWM_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <inc/hw_memmap.h>
@@ -9,9 +16,6 @@
 
 #include "pin.h"
 
-
-#ifndef _PWM_H_
-#define _PWM_H_
 
 // TODO: Unroll this in the future
 #define PWM0 &_pwm[0]
@@ -63,5 +67,9 @@ void PWM_Disable( tPWM*, unsigned char );
 extern tPWM _pwm[2];
 
 extern tPin pins[PIN_COUNT];
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

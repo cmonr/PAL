@@ -1,3 +1,10 @@
+#ifndef _UART_H_
+#define _UART_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <inc/hw_memmap.h>
@@ -10,8 +17,6 @@
 
 #include "pin.h"
 
-#ifndef _UART_H_
-#define _UART_H_
 
 // TODO: Unroll this in the future
 #define UART0 &_uart[0]
@@ -88,5 +93,9 @@ void UART6IntHandler( void );
 void UART7IntHandler( void );
 
 extern tPin pins[PIN_COUNT];
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

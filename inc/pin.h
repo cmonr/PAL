@@ -1,11 +1,15 @@
+#ifndef _PIN_H_
+#define _PIN_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <inc/hw_memmap.h>
 #include <driverlib/sysctl.h>
 #include <driverlib/gpio.h>
-
-#ifndef _PIN_H_
-#define _PIN_H_
 
 #define PORT_WIDTH 8
 #define PORT_COUNT PIN_COUNT/PORT_WIDTH
@@ -51,5 +55,9 @@ unsigned char Pin_Read( tPinName );
 
 void Pin_Enable( tPinName );
 void Pin_Disable( tPinName );
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
